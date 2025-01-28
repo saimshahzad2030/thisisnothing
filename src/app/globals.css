@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+/* * {
+  cursor: none;  
+} */
+.swiper_container {   
+  width: 90%;
+  margin: auto;
+  overflow: visible;
+  padding: 20px; 
+  height: 80vh;   
+
+}
+ 
+.swiperSlide.swiper-slide-active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  transform: scale(1.1) !important;
+  overflow: visible;
+  z-index: 2; 
+    will-change: transform, opacity, box-shadow; 
+   
+}
+ 
+.swiperSlide.swiper-slide-prev,
+.swiperSlide.swiper-slide-next {
+  will-change: transform, opacity; /* Notify the browser of intended changes */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffdc14;  
+  transform: scale(0.6) !important; 
+  opacity: 0.9; 
+  z-index: 1;
+  /* box-shadow: 0 0 15px rgba(255, 217, 4, 0.975), 
+              0 0 30px rgba(255, 217, 4, 0.863), 
+              0 0 45px rgba(255, 218, 8, 0.838);  */
+              box-shadow: 0 0 20px rgba(255, 217, 4, 0.975);
+  border-radius: 20px; 
+
+  transition: background-color 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+            transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+            box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.swiperSlide.swiper-slide-prev *:not(img),
+.swiperSlide.swiper-slide-next *:not(img) {
+  display: none; 
+}
+.swiperSlide.swiper-slide-prev img,
+.swiperSlide.swiper-slide-next img {
+  opacity: 0; /* Set opacity to 0 for blending */
+  transition: opacity 0.5s ease-in-out; /* Optional: Add transition for a smooth blending effect */
+}
+
+/* Ensure the center slide image is fully visible */
+.swiperSlide.swiper-slide-active img {
+  opacity: 1; /* Set opacity to 1 to make the image visible */
+  transition: opacity 0.5s ease-in-out; /* Optional: Add transition for a smooth effect */
+}
+.swiperSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  min-width: 500px;
+  max-height: 520px;
+  /* background-color: rgba(0, 0, 0, 0.1);  */
+  padding: 20px;
+  overflow: hidden;
+  margin: auto;
+  /* backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);   */
+}
+
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-button-next:after,
+
+.swiper-button-prev:after {
+  color: #EFA300; /* Change arrow color to white */
+} 
