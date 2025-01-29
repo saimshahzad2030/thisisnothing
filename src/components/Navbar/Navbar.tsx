@@ -10,7 +10,7 @@ const Navbar = () => {
   const [menuClicked, setMenuClicked] = React.useState(false);
 
   return (
-    <div className="fixed container mx-auto w-full z-40">
+    <div className="fixed bg-opacity-60 bg-black w-full z-40">
       <div className="relative flex flex-row items-center justify-between   px-4 py-4">
         <img src="/assets/logo.png" alt="logo" className="h-12 lg:h-8 w-auto" />
         {!menuClicked && (
